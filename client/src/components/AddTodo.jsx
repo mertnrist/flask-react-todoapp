@@ -10,8 +10,6 @@ export default function AddTodo({ apiHost, apiUrl }) {
 	const onClick = async (e) => {
 		const headers = {
 			'Content-Type': 'application/json',
-			'Access-Control-Allow-Origin': apiHost,
-			'Access-Control-Expose-Headers': 'Access-Control-*',
 		}
 		if (title.length != 0) {
 			const response = await fetch(apiHost, {
