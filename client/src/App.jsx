@@ -3,8 +3,8 @@ import ListTodo from './components/ListTodo'
 import './style.css'
 
 export default function App() {
-	const apiUrl = 'http://localhost:3000'
-	const apiHost = 'http://localhost:5000'
+	const apiUrl = 'https://flask-react-todoapp.b2neren.repl.co/api/'
+	const apiHost = 'https://flask-react-todoapp.vercel.app/'
 
 	return (
 		<div className='container'>
