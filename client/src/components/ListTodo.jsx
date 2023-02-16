@@ -25,7 +25,7 @@ export default function ListTodo({ apiHost, apiUrl }) {
 		const headers = {
 			'Content-Type': 'application/json',
 		}
-		const response = await fetch(apiHost + todo.id, {
+		const response = await fetch(apiUrl + todo.id, {
 			method: 'put',
 			mode: 'cors',
 			headers: headers,
