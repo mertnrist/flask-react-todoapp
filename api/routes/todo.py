@@ -4,9 +4,11 @@ from flask_cors import cross_origin
 
 apiTodo = Blueprint('todo', __name__, url_prefix='/api')
 
+origins = ['http://localhost:3000']
+
 
 @apiTodo.route('/', methods=['GET'])
-@cross_origin(origins=['http://localhost:3000'])
+@cross_origin(origins=origins)
 def todo():
     data = Todo.getTodos()
     todos = []
@@ -28,7 +30,7 @@ def todo():
 
 
 @apiTodo.route('/', methods=['POST'])
-@cross_origin(origins=['http://localhost:3000'])
+@cross_origin(origins=origins)
 def todoPost():
     title = request.json['title']
     data = Todo.addTodo(title)
@@ -42,7 +44,7 @@ def todoPost():
 
 
 @apiTodo.route('/<int:id>', methods=['PUT'])
-@cross_origin(origins=['http://localhost:3000'])
+@cross_origin(origins=origins)
 def todoPut(id):
     isDone = request.json['isDone']
     data = Todo.updateTodo(id, isDone)
@@ -56,7 +58,7 @@ def todoPut(id):
 
 
 @apiTodo.route('/<int:id>', methods=['DELETE'])
-@cross_origin(origins=['http://localhost:3000'])
+@cross_origin(origins=origins)
 def todoDelete(id):
     data = Todo.deleteTodo(id)
     return jsonify(

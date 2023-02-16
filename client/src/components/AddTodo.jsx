@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export default function AddTodo() {
+export default function AddTodo({ apiHost, apiUrl }) {
 	const [title, setTitle] = useState('')
 
 	const onChange = (e) => {
@@ -8,15 +8,13 @@ export default function AddTodo() {
 	}
 
 	const onClick = async (e) => {
-		const url = 'http://localhost:5000/api/'
-
 		const headers = {
 			'Content-Type': 'application/json',
-			'Access-Control-Allow-Origin': 'http://localhost:3000',
+			'Access-Control-Allow-Origin': apiHost,
 			'Access-Control-Expose-Headers': 'Access-Control-*',
 		}
 		if (title.length != 0) {
-			const response = await fetch(url, {
+			const response = await fetch(apiHost, {
 				method: 'post',
 				mode: 'cors',
 				headers: headers,

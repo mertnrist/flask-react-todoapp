@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-export default function ListTodo() {
+export default function ListTodo({ apiHost, apiUrl }) {
 	const [todos, setTodos] = useState([])
 
 	useEffect(() => {
@@ -8,8 +8,7 @@ export default function ListTodo() {
 	}, [])
 
 	const getTodos = async () => {
-		const url = 'http://localhost:5000/api/'
-		let response = await fetch(url)
+		let response = await fetch(apiUrl)
 		response = await response.json()
 		setTodos(response.todos)
 	}
@@ -24,13 +23,13 @@ export default function ListTodo() {
 		}
 
 		const id = todo.id
-		const url = 'http://localhost:5000/api/' + id
+		const url = apiHost + id
 		const headers = {
 			'Content-Type': 'application/json',
-			'Access-Control-Allow-Origin': 'http://localhost:3000',
+			'Access-Control-Allow-Origin': apiHost,
 			'Access-Control-Expose-Headers': 'Access-Control-*',
 		}
-		const response = await fetch(url, {
+		const response = await fetch(apiUrl, {
 			method: 'put',
 			mode: 'cors',
 			headers: headers,
@@ -48,18 +47,17 @@ export default function ListTodo() {
 	}
 
 	const deleteTodos = async () => {
-		const url = 'http://localhost:5000/api/'
 		const data = []
 		todos.forEach(async (todo) => {
 			const isDone = todo.isDone
 			const headers = {
 				'Content-Type': 'application/json',
-				'Access-Control-Allow-Origin': 'http://localhost:3000',
+				'Access-Control-Allow-Origin': apiHost,
 				'Access-Control-Expose-Headers': 'Access-Control-*',
 			}
 
 			if (isDone == true) {
-				const response = await fetch(url + todo.id, {
+				const response = await fetch(apiUrl + todo.id, {
 					method: 'Delete',
 					mode: 'cors',
 					headers: headers,
