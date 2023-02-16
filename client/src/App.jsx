@@ -4,7 +4,7 @@ import './style.css'
 
 export default function App() {
 	const apiUrl = 'https://flask-react-todoapp.b2neren.repl.co/api/'
-	const apiHost = 'https://flask-react-todoapp.vercel.app/'
+	const apiHost = '*'
 
 	return (
 		<div className='container'>
