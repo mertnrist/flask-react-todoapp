@@ -1,10 +1,52 @@
-[](#react-ve-flask-ile-yapılmış-todo-uygulaması)React ve Flask ile yapılmış TODO uygulaması
-===========================================================================================
+
+# React ve Flask ile yapılmış TODO uygulaması
 
 Kendimi geliştirmek için yaptığım basit bir uygulama.
 
-[](#ekran-görüntüleri)Ekran Görüntüleri
----------------------------------------
 
-[![Uygulama Ekran Görüntüsü](https://camo.githubusercontent.com/2e5ab9725f4c2703240b5617c9433d08cc0337ba3c831f8e4d472e42a10c2713/68747470733a2f2f6d656469612e646973636f72646170702e6e65742f6174746163686d656e74732f3432363434343034303339333835303838312f313037343334363030333838323331313734302f746f646f2e706e67)](https://camo.githubusercontent.com/2e5ab9725f4c2703240b5617c9433d08cc0337ba3c831f8e4d472e42a10c2713/68747470733a2f2f6d656469612e646973636f72646170702e6e65742f6174746163686d656e74732f3432363434343034303339333835303838312f313037343334363030333838323331313734302f746f646f2e706e67)
+## Ekran Görüntüleri
 
+![Uygulama Ekran Görüntüsü](https://media.discordapp.net/attachments/426444040393850881/1074346003882311740/todo.png)
+
+  
+## API Kullanımı
+
+```http
+  GET /api/
+```
+
+| Parametre | Tip     | Açıklama                       |
+| :-------- | :------- | :-------------------------------- |
+| `id`      | `int` | Bensezsiz kimliğini döndürür|
+| `title`      | `string` | Todo'nun başlığını döndürür|
+| `created_At`      | `timeDate` | Todo'nun oluşturulduğu tarihi döndürür|
+| `isDone`      | `boolean` | Todo'nun yapılıp yapılmadığı döndürür|
+
+
+```http
+  POST /api/
+```
+
+| Parametre | Tip     | Açıklama                       |
+| :-------- | :------- | :-------------------------------- |
+| `title`      | `string` | Todo'nun başlığı|
+
+```http
+  PULL /api/${id}
+```
+
+| Parametre | Tip     | Açıklama                       |
+| :-------- | :------- | :-------------------------------- |
+| `isDone`      | `boolean` | Todo'nun yapılıp yapılmadığı|
+
+
+```http
+  DELETE /api/${id}
+```
+
+| Parametre | Tip     | Açıklama                       |
+| :-------- | :------- | :-------------------------------- |
+| `id`      | `int` | Bensezsiz kimlik|
+
+
+  
