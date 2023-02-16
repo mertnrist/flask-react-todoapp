@@ -33,6 +33,7 @@ export default function ListTodo({ apiHost, apiUrl }) {
 		})
 
 		const data = []
+		const id = todo.id
 		todos.forEach((todo) => {
 			if (todo.id == id) {
 				todo.isDone = body.isDone
