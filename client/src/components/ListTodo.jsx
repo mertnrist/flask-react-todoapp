@@ -23,14 +23,13 @@ export default function ListTodo({ apiHost, apiUrl }) {
 		}
 
 		const id = todo.id
-		const url = apiHost + id
 		const headers = {
 			'Content-Type': 'application/json',
 			'Access-Control-Allow-Origin': apiHost,
 			'Access-Control-Expose-Headers': 'Access-Control-*',
 			'Control-Allow-Origin': *
 		}
-		const response = await fetch(apiUrl, {
+		const response = await fetch(apiHost + id, {
 			method: 'put',
 			mode: 'cors',
 			headers: headers,
