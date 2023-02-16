@@ -4,7 +4,7 @@ from flask_cors import cross_origin
 
 apiTodo = Blueprint('todo', __name__, url_prefix='/api')
 
-origins = ['http://localhost:3000']
+origins = ['https://flask-react-todoapp.vercel.app/']
 
 
 @apiTodo.route('/', methods=['GET'])
