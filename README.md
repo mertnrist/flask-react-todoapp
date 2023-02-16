@@ -17,7 +17,7 @@ Kendimi geliştirmek için yaptığım basit bir uygulama.
 
 | Parametre | Tip     | Açıklama                       |
 | :-------- | :------- | :-------------------------------- |
-| `id`      | `int` | Bensezsiz kimliğini döndürür|
+| `id`      | `int` | Benzersiz kimliğini döndürür|
 | `title`      | `string` | Todo'nun başlığını döndürür|
 | `created_At`      | `timeDate` | Todo'nun oluşturulduğu tarihi döndürür|
 | `isDone`      | `boolean` | Todo'nun yapılıp yapılmadığı döndürür|
@@ -46,7 +46,13 @@ Kendimi geliştirmek için yaptığım basit bir uygulama.
 
 | Parametre | Tip     | Açıklama                       |
 | :-------- | :------- | :-------------------------------- |
-| `id`      | `int` | Bensezsiz kimlik|
+| `id`      | `int` | Benzersiz kimlik|
 
 
+  
+## İncele
+
+[DEMO](https://flask-react-todoapp.vercel.app/)
+
+[API](https://flask-react-todoapp.b2neren.repl.co/api)
   
