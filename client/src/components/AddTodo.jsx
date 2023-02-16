@@ -12,7 +12,7 @@ export default function AddTodo({ apiHost, apiUrl }) {
 			'Content-Type': 'application/json',
 		}
 		if (title.length != 0) {
-			const response = await fetch(apiHost, {
+			const response = await fetch(apiUrl, {
 				method: 'post',
 				mode: 'cors',
 				headers: headers,
