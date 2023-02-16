@@ -26,7 +26,6 @@ export default function ListTodo({ apiHost, apiUrl }) {
 			'Content-Type': 'application/json',
 			'Access-Control-Allow-Origin': apiHost,
 			'Access-Control-Expose-Headers': 'Access-Control-*',
-			'Control-Allow-Origin': *
 		}
 		const response = await fetch(apiHost + todo.id, {
 			method: 'put',
@@ -53,7 +52,6 @@ export default function ListTodo({ apiHost, apiUrl }) {
 				'Content-Type': 'application/json',
 				'Access-Control-Allow-Origin': apiHost,
 				'Access-Control-Expose-Headers': 'Access-Control-*',
-				'Control-Allow-Origin': *
 			}
 
 			if (isDone == true) {
